@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Review Skills</title>
+    <meta name="description"
+        content="Static documentation for project-review-skills with install and usage commands." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+    <div class="bg-orb bg-orb-a" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-b" aria-hidden="true"></div>
+
+    <header class="shell hero reveal">
+        <p class="kicker">Static docs for GitHub Pages</p>
+        <h1>Project Review Skills</h1>
+        <p class="lede">
+            This site documents the skill definitions in the <strong>skills</strong> folder and provides
+            the one command your team needs to copy and install the skill via npx.
+        </p>
+        <div class="cta-row">
+            <a class="btn btn-solid" href="skills-pages/project-review-skills.html">Open Skill Details</a>
+            <button type="button" class="btn btn-outline"
+                data-copy="npx skills add https://github.com/thinktalentservice-ai/project-review-skills --skill project-review-skills">
+                Copy npx Command
+            </button>
+        </div>
+        <p class="copy-line" id="copy-result" aria-live="polite"></p>
+    </header>
+
+    <main class="shell">
+        <section class="panel reveal delay-1">
+            <h2>Available Skill Pages</h2>
+            <div class="skill-grid">
+                <article class="skill-card">
+                    <p class="skill-path">skills/project-review-skills/SKILL.md</p>
+                    <h3>project-review-skills</h3>
+                    <p>
+                        Bootstraps a project review system with two agents and six orchestrator skills,
+                        tailored to the target repository stack.
+                    </p>
+                    <a href="skills-pages/project-review-skills.html">Read full page</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel reveal delay-2">
+            <h2>Install Command</h2>
+            <pre><code>npx skills add https://github.com/thinktalentservice-ai/project-review-skills --skill project-review-skills</code></pre>
+        </section>
+    </main>
+
+    <footer class="shell footer reveal delay-3">
+        <p>Published by .github/workflows/static.yml using GitHub Pages.</p>
+    </footer>
+
+    <script src="assets/site.js"></script>
+</body>
+
+</html>
