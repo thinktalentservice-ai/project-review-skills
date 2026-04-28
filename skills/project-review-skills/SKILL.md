@@ -404,7 +404,7 @@ Dispatch pattern (send ALL five scan calls in the same response turn for paralle
      gh issue create ...
    fi
    ```
-8. **Only then** run `gh issue create`. No issue is filed from a raw scan report — every issue
+9. **Only then** run `gh issue create`. No issue is filed from a raw scan report — every issue
    passes through Opus synthesis AND Codex verification AND duplicate-check first.
 
 #### `.claude/skills/project-review-security/SKILL.md`
@@ -843,6 +843,11 @@ allowed-tools:
   - Agent
   - Bash
   - Read
+  - mcp__plugin_multi-model_nvidia-security__nvidia_security_chat
+  - mcp__plugin_multi-model_openai__openai_chat
+  - mcp__plugin_multi-model_codex__codex_chat
+  - mcp__plugin_multi-model_ollama__ollama_chat
+  - mcp__plugin_multi-model_copilot__copilot_chat
 ---
 
 You are the Opus orchestrator for a full PROJECT_NAME review. Dispatch five **independent
@@ -983,6 +988,11 @@ allowed-tools:
   - Agent
   - Bash
   - Read
+  - mcp__plugin_multi-model_nvidia-security__nvidia_security_chat
+  - mcp__plugin_multi-model_openai__openai_chat
+  - mcp__plugin_multi-model_codex__codex_chat
+  - mcp__plugin_multi-model_ollama__ollama_chat
+  - mcp__plugin_multi-model_copilot__copilot_chat
 ---
 
 You are the Opus orchestrator. Dispatch five **independent multi-model scans** via the

@@ -11,7 +11,7 @@ Convert the existing `.claude/skills/project-review*` directories to the
 ## Architecture
 
 ```
-nextv3-feedback-client-micro-service/
+<repo>/
 ├── .agents/skills/                          ← canonical source (universal path, vercel-labs spec)
 │   ├── package.json                         ← npm skills package metadata
 │   ├── project-review/SKILL.md              ← read directly by GitHub Copilot + Codex
@@ -83,7 +83,7 @@ const path = require('path');
 const os = require('os');
 
 const ROOT = path.resolve(__dirname, '..');
-const CANONICAL = path.join(ROOT, '.agent', 'skills');
+const CANONICAL = path.join(ROOT, '.agents', 'skills');
 const AGENT_SKILLS = path.join(ROOT, '.claude', 'skills');
 const TYPE = os.platform() === 'win32' ? 'junction' : 'dir';
 
@@ -113,9 +113,9 @@ main().catch(err => { console.error(err); process.exit(1); });
 
 ```json
 {
-  "name": "nextv3-feedback-skills",
+  "name": "<skills-package-name>",
   "version": "1.0.0",
-  "description": "Project review skills for nextv3-feedback-client-micro-service",
+  "description": "Project review skills for <repo>",
   "skills": [
     "project-review",
     "project-review-security",

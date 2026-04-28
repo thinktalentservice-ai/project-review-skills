@@ -6,6 +6,7 @@
     --brand: oklch(0.75 0.14 150);
     --brand-2: oklch(0.79 0.11 40);
     --ring: oklch(0.86 0.13 150);
+    --ring-glow: oklch(0.86 0.13 150 / 0.28);
     --border: oklch(0.36 0.03 250 / 0.9);
     --shadow: 0 18px 52px oklch(0.03 0.015 250 / 0.52);
     --ink-strong: #132028;
@@ -119,14 +120,20 @@ h3 {
     font-size: 0.86rem;
     letter-spacing: 0.02em;
     cursor: pointer;
-    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, outline-color 180ms ease;
 }
 
-.btn:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--ring);
+}
+
 .btn:focus-visible {
     transform: translateY(-2px);
     border-color: var(--ring);
-    outline: none;
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--ring-glow);
 }
 
 .btn-solid {
@@ -219,6 +226,20 @@ code {
     transform: translateY(14px);
     animation: rise 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: var(--delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+        transform: none;
+        transition-duration: 0.01ms;
+    }
 }
 
 .delay-1 {
